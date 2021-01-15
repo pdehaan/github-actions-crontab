@@ -1,0 +1,12 @@
+name: github schedule demo
+
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string
+    - cron:  '*/3 * * * *'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "current date is {{ date }}"
